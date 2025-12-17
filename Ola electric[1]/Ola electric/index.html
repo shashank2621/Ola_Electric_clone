@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ola Electric</title>
+
+  <style>
+    /* =====================
+       GLOBAL RESET
+    ===================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* =====================
+       NAVBAR
+    ===================== */
+    nav {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px;
+    }
+
+    .logo img {
+      width: 110px;
+      height: 35px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-links a:hover {
+      color: green;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+
+    /* =====================
+       HERO SECTION
+    ===================== */
+    .ola_bg {
+      background-image: url('https://cdn.olaelectric.com/sites/evdp/pages/home_banner/hpb_8w_web_image.webp');
+      background-size: cover;
+      background-position: center;
+      height: 120vh;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
+
+    .Offers_head {
+      padding-top: 50px;
+      font-size: 40px;
+    }
+
+    .offer_para {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .Button {
+      margin-top: 30px;
+      height: 50px;
+      width: 170px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* =====================
+       SECTION HEADINGS
+    ===================== */
+    .ola {
+      margin: 40px 0 20px 45px;
+      font-size: 32px;
+    }
+
+    /* =====================
+       CARD LAYOUT
+    ===================== */
+    .card-wrapper {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 20px 40px;
+    }
+
+    .card {
+      width: 350px;
+      background-color: rgba(192, 192, 192, 0.7);
+      margin-bottom: 40px;
+    }
+
+    .flex-break {
+      flex-basis: 100%;
+      height: 0;
+    }
+
+    .card-wrapper {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 20px 40px;
+    }
+
+    .card {
+      width: 350px;
+      background-color: rgba(192, 192, 192, 0.7);
+      margin-bottom: 40px;
+    }
+
+    .card img.main-image {
+      width: 100%;
+      height: 350px;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content img {
+      width: 280px;
+      margin-bottom: 10px;
+    }
+
+    .card-content p.description {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card-content p.label {
+      color: grey;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .card-content p.price {
+      font-size: 20px;
+      margin-top: 5px;
+    }
+
+    .card-content p.or {
+      color: grey;
+      margin-top: 5px;
+    }
+
+    /* =====================
+       CARD BUTTONS
+    ===================== */
+    .explore-btn {
+      width: 100%;
+      height: 45px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .buy-btn {
+      width: 100%;
+      height: 45px;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    /* =====================
+       FUTURE SECTION
+    ===================== */
+    .future_card {
+      margin: 60px 40px;
+    }
+
+    .future_head {
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+    .ola_service_container{
+        background-color:rgba(192, 192, 192, 0.819);
+       height: 110vh;
+        width:100%;
+    }
+    .service_head{
+        margin-left: 50px;
+        margin-top: 35px;
+        font-family: sans-serif;
+        font-size: 35px;
+    }
+    .Hyper_head{
+        font-family: sans-serif;
+        margin-left: 50px;
+        margin-top:12px;
+        font-size: 30px;
+        color: aliceblue;
+    }
+    .card_image{
+      margin-left:155px;
+      margin-top: 12px;
+    }
+    .service-btn{
+      width: 20%;
+      height: 45px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      margin-left: 525px;
+    }
+    .network_para{
+      color: rgb(128, 128, 128);
+      margin-left: 485px;
+      margin-top: 18px;
+    }
+    .Emi_card{
+      background-color: rgb(214, 214, 198);
+      height: 90vh;
+      width:100%;
+      margin-top: 22px;
+      margin-bottom: 12px;
+    }
+    .Emi_head{
+      margin-top:65px;
+      margin-left:65px;
+      font-family: sans-serif;
+      font-size: 45px;
+    }
+    .Emi_para{
+      margin-top:35px;
+      margin-left:65px;
+      font-family: sans-serif;
+      color: rgba(119, 110, 110, 0.918);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+    .hori{
+      width:500px;
+      margin-left: 65px;
+      margin-top: 50px;
+    }
+    .tenure_wrapper {
+  display: flex;
+  gap: 80px; 
+  margin-top: 45px;
+  
+}
+
+.Tenure_card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left:55px;
+  font-size: 19px;
+  
+}
+
+.tenure_text h3 {
+  margin: 0;
+  color: rgba(131, 122, 122, 0.893);
+}
+
+.tenure_text p {
+  margin: 0;
+  font-weight: 600;
+  color: green;
+}
+.hori2{
+   width:500px;
+  margin-left: 65px;
+  margin-top: 60px;
+}
+.Calculate_now{
+  width: 20%;
+      height: 45px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      margin-top: 65px;
+      cursor: pointer;
+      margin-left: 65px; 
+      border-radius: 5px;
+}
+.Platform{
+  background-color: rgb(12, 12, 70);
+  height: 216vh;
+  width:100%;
+  margin-bottom: 55px;
+}
+.Platform_image{
+  margin-top: 12px;
+  margin-left: 45px;
+  height:190vh;
+  width: 95%;
+}
+.platform_head{
+  color: #fff;
+  margin: 45px;
+  font-weight:500 ;
+}
+.Voices_card{
+  background-color: beige;
+  height: 90vh;
+  width:100%;
+  margin-bottom: 155px;
+}
+.voices_head{
+  margin: 35px;
+  font-weight: 540;
+}
+.voices_para{
+  margin-left: 35px;
+  color: rgb(135, 112, 112);
+}
+.voices_subcard{
+  background-color: #ffff;
+  height:50vh;
+  width:25vw;
+  border-radius:15px;
+  margin-left: 65px;
+  margin-top: 52px;
+  position: relative;
+  display: inline-block;
+}
+.subcard_image{
+  margin-left: 105px;
+  position: absolute;
+  margin-top: 25px;
+}
+.subcard_head{
+  margin-top: 220px;
+  font-weight: 500;
+  margin-left: 29px;
+  text-align: center;
+}
+.Differnce_card{
+  height: 100vh;
+  width:100%;
+  margin-bottom: 155px;
+  background-color: rgb(253, 246, 238);
+}
+.difference_head{
+  margin-bottom: 25px;
+  margin-left: 45px;
+  font-size: 45px;
+  font-weight: 520;
+  margin-top:15px;
+}
+.difference_para{
+  margin-left: 45px;
+  color: grey;
+}
+
+.difference_card{
+   margin-top: 25px;
+  display: inline-block;
+  height: 225vh;
+  margin-left: 35px;
+}
+.Diy_head{
+  margin-top: 15px;
+  margin-left:35px;
+  font-weight: 500;
+}
+.diy_para{
+   margin-top: 12px;
+   text-align: center;
+   margin-right: 12px;
+   color: grey;
+}
+.Find_scooty_head{
+  text-align: center;
+  font-weight: 500;
+}
+.Live_head{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.about_container{
+  background-color: white;
+  height: 100vh;
+  width:100%;
+}
+.about_image{
+  height:60vh;
+  float: right;
+}
+.about_head{
+  font-size: 50px;
+  margin-bottom: 25px;
+  font-weight: 540;
+  margin-left:25px;
+}
+.about_para{
+  color:rgb(99, 90, 90);
+  font-size: 21px;
+  margin-left:12px;
+}
+.India{
+  margin-top:49px;
+  text-align: left;
+  margin-left:12px;
+  margin-bottom: 45px;
+  font-size: 30px;
+  font-weight: 500;
+}
+.learn_more{
+  color: green;
+  font-size: 25px;
+  margin-left: 85px;
+}
+.subscribe{
+  background-color: azure;
+  height: 20vh;
+  width: 100%;
+}
+.sub_head{
+   margin-top:65px;
+   font-weight:lighter;
+   font-size: 35px;
+   margin-left: 65px;
+}
+.hori3{
+  width:450px;
+  float: right;
+  margin-right:25px;
+  margin-bottom: 125px;
+}
+.email{
+  font-size: 25px;
+  color: grey;
+  margin-bottom: 45%;
+  float: right;
+}
+.foot_container{
+   background-color: #333;
+   height:50vh;
+   width:100%;
+}
+.mgz-hover-main{
+  margin:35px;
+}
+.footer-flex-1{
+  display:inline-flex;
+  flex-direction: column;
+  margin-top: 34px;
+  margin-left: 100px;
+}
+.footer-flex-1 a{
+  text-decoration: none;
+  color: #d6e1ea;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.footer-flex-1 a :hover{
+  text-decoration: none;
+  color: rgb(12, 12, 70);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 3s;
+}
+.footer-icons{
+  height: 40px;
+  position: relative;
+  float: right;
+  top: 34px;
+  color:black;
+}
+.footer-icons a{
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  margin-right: 24px;
+}
+.mobile-number{
+  font-size: 15px;
+  margin-left:80% ;
+  color: #d6e1ea;
+  position: relative;
+  float: inline-start;
+  bottom: 80%;
+}
+.mobile-number1{
+  float: inline-end;
+  margin-left: 20px;
+}
+/* =====================
+   MOBILE RESPONSIVE (≤768px)
+===================== */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* HERO SECTION */
+  .ola_bg {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .Offers_head {
+    font-size: 28px;
+  }
+
+  .offer_para {
+    font-size: 16px;
+  }
+
+  /* PRODUCT CARDS */
+  .card-wrapper {
+    margin: 10px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card img.main-image {
+    height: auto;
+  }
+
+  /* SERVICE SECTION */
+  .ola_service_container {
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card_image {
+    margin: 20px auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .service-btn {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .network_para {
+    margin: 10px auto;
+  }
+
+  /* EMI SECTION */
+  .Emi_card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .Emi_head,
+  .Emi_para {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .tenure_wrapper {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .Tenure_card {
+    margin-left: 0;
+  }
+
+  .Calculate_now {
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  /* PLATFORM IMAGE */
+  .Platform {
+    height: auto;
+  }
+
+  .Platform_image {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  /* VOICES SECTION */
+  .Voices_card {
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .voices_subcard {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .subcard_image {
+    position: static;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .subcard_head {
+    margin-top: 20px;
+  }
+
+  /* DIFFERENCE SECTION */
+  .Differnce_card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .difference_card {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  /* ABOUT SECTION */
+  .about_container {
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .about_image {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  /* FOOTER */
+  .foot_container {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .footer-flex-1 {
+    margin: 20px auto;
+    align-items: center;
+  }
+
+  .footer-icons {
+    float: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mobile-number {
+    margin: 20px auto;
+    text-align: center;
+    float: none;
+    position: static;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <img src="https://cdn.olaelectric.com/ev-discovery-platform/images/ola-logo-13042023.svg" alt="Ola Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Scooters</a></li>
+      <li><a href="#">Motorcycles</a></li>
+      <li><a href="#">Energy Solutions</a></li>
+      <li><a href="#">Investor Relations</a></li>
+      <li><a href="#">Test Ride</a></li>
+      <li><a href="#">Order Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="ola_bg">
+    <h1 class="Offers_head">Exclusive Offers</h1>
+    <p class="offer_para">Take your Ola home with a FREE 5-year extended warranty</p>
+    <button class="Button">Book Now</button>
+  </div>
+
+  <!-- SCOOTERS -->
+  <h1 class="ola">Introducing Ola S1 3rd Gen Portfolio</h1>
+
+  <div class="card-wrapper">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <img class="main-image" src="https://cdn.olaelectric.com/sites/evdp/pages/gen3/ola_s1pro_plus_gen3_web_image_v2.webp" alt="Ola S1 Pro Plus" />
+      <div class="card-content">
+        <img src="https://cdn.olaelectric.com/sites/evdp/pages/gen3/logo/ola_s1_pro_plus_3rd_gen_logo_v1.svg" alt="Logo" />
+        <p class="description">Our most powerful scooter yet</p>
+        <hr />
+        <p class="label">Starting at</p>
+        <p class="price">₹5,185 / month</p>
+        <p class="or">Or ₹1,54,999</p>
+        <button class="explore-btn">Explore S1 Pro+</button>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img class="main-image" src="https://cdn.olaelectric.com/sites/evdp/pages/gen3/ola_s1pro_gen3_web_image_v2.webp" alt="Ola S1 Pro" />
+      <div class="card-content">
+        <img src="https://cdn.olaelectric.com/sites/evdp/pages/gen3/logo/ola_s1_pro_3rd_gen_logo_v1.svg" alt="Logo" />
+        <p class="description">Pure Power. Peak Performance</p>
+        <hr />
+        <p class="label">Starting at</p>
+        <p class="price">₹5,185 / month</p>
+        <p class="or">Or ₹1,54,999</p>
+        <button class="explore-btn">Explore S1 Pro</button>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img class="main-image" src="https://cdn.olaelectric.com/sites/evdp/pages/gen3/ola_s1x_plus_gen3_web_image_v2.webp" alt="Ola S1 X Plus" />
+      <div class="card-content">
+        <img src="https://cdn.olaelectric.com/sites/evdp/pages/gen3/logo/ola_s1_x_plus_3rd_gen_logo_v1.svg" alt="Logo" />
+        <p class="description">Upgrade to electric</p>
+        <hr />
+        <p class="label">Starting at</p>
+        <p class="price">₹2,676 / month</p>
+        <p class="or">Or ₹84,999</p>
+        <button class="explore-btn">Explore S1 X</button>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+    </div>
+  <h1>The future of motorcycling is here</h1>
+
+    <div class="flex-break"></div>
+    
+    <!-- Card 6 -->
+    <div class="card">
+      <img class="main-image" src="https://cdn.olaelectric.com/sites/evdp/pages/home_ipo/future_of_motorcycle_roadster_x_plus_web.webp" alt="Ola Roadster X Plus" />
+      <div class="card-content">
+        <img src="https://cdn.olaelectric.com/sites/evdp/pages/home_ipo/future_of_motorcycle_name_roadster_x_plus_web.svg" alt="Roadster X Plus Logo" />
+        <p class="description">India's ultimate electric upgrade</p>
+        <hr />
+        <p class="label">Starting at</p>
+        <p class="price">₹1,29,999</p>
+        <button class="explore-btn">Explore Roadster X+</button>
+        <button class="buy-btn">Book Now</button>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card">
+      <img class="main-image" src="https://cdn.olaelectric.com/sites/evdp/pages/bike/mrx_roadster_home_web_image_v6.webp" alt="Ola Roadster" />
+      <div class="card-content">
+        <img src="https://cdn.olaelectric.com/sites/evdp/pages/home_ipo/future_of_motorcycle_name_roadster_x_web.svg" alt="Roadster Logo" />
+        <p class="description">Upgrade to electic with style</p>
+        <hr />
+        <p class="label">Starting at</p>
+        <p class="price">₹99,999</p>
+        <button class="explore-btn">Explore Roadster X</button>
+        <button class="buy-btn">Book Now</button>
+      </div>
+    </div>
+
+   <div class="card">
+      <img class="main-image" src="https://cdn.olaelectric.com/sites/evdp/pages/home_ipo/future_of_motorcycle_roadster_web_v2.webp" alt="future_of_motorcycle_roadster_web_v2"  />
+      <div class="card-content">
+        <img class="mgz-hover-main" src="https://cdn.olaelectric.com/sites/evdp/pages/home_ipo/future_of_motorcycle_name_roadster_web.svg" alt="future_of_motorcycle_name_roadster_web" title="">
+        <p class="description">City Limit not your limit</p>
+        <hr />
+        <p class="label">Starting at</p>
+        <p class="price">₹1,04,999</p>
+        <button class="explore-btn">Explore Roadster</button>
+        <button class="buy-btn">Book Now</button>
+      </div>
+    </div>
+
+    <div class="ola_service_container">
+     <h1 class="service_head">Ola Service Centers Near You</h1>
+     <h3 class="Hyper_head"># HYPERSERVICE</h3>
+     <img src="https://cdn.olaelectric.com/sites/evdp/pages/service/home_hyperservices_img_web_v3.webp" alt="home_hyperservices_img_web_v3" height="480" class="card_image">
+     <button class="service-btn">Explore Service Location</button>
+     <p class="network_para">2X network by Dec. 3rd party mechanics by Dec 2025.</p>
+    </div>
+
+    <div class="Emi_card">
+      <h1 class="Emi_head">Plan Your Ride With <br>Easy EMIs </h1>
+      <p class="Emi_para">Use Our EMI Calculator to estimate your monthly payments <br> and find the right Ola Vehicle for Your Budget</p>
+      <hr class="hori"/>
+
+  <div class="tenure_wrapper">
+  <div class="Tenure_card">
+    <img src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/emi-calc.svg" height="50">
+    <div class="tenure_text">
+      <h3>Tenure Up To</h3>
+      <p>60 Months</p>
+    </div>
+  </div>
+
+  <div class="Tenure_card">
+    <img src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/emi-calc.svg" height="50">
+    <div class="tenure_text">
+      <h3>Lowest Rate of Interest</h3>
+      <p>6.99%</p>
+    </div>
+  </div>
+   
+  <div class="Tenure_card">
+    <img src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/emi-calc.svg" height="50">
+    <div class="tenure_text">
+      <h3>Downpayment</h3>
+      <p>Starts at $0</p>
+    </div>
+  </div>
+
+  <div class="Tenure_card">
+    <img src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/emi-calc.svg" height="50">
+    <div class="tenure_text">
+      <h3>Processing Fee</h3>
+      <p>Zero</p>
+    </div>
+  </div>
+ </div>
+
+  <hr class="hori2"/>
+  <button class="Calculate_now">Calculate Your EMI</button>
+  </div>
+
+  <div class="Platform">
+    <h1 class="platform_head">The all-new Gen-3 platform</h1>
+   <img src="https://cdn.olaelectric.com/sites/evdp/pages/gen3/hp_gen2_sankalp_web_image_v2.webp" alt="hp_gen2_sankalp_web_image_v2" title=""  class="Platform_image">
+  </div>
+
+  <div class="Voices_card">
+    <h1 class="voices_head">Voices of our Ola Community</h1>
+    <p class="voices_para">From first rides to everyday commutes. Ola Community shares their electric journey.</p>
+    <div class="voices_subcard">
+      <img class="subcard_image" src="https://cdn.olaelectric.com/sites/evdp/pages/home/homepage_ola_community_web_image_01.webp" alt="homepage_ola_community_web_image_01" title="" height="165">
+      <h2 class="subcard_head">Hear it from those who took <br>
+      the Roadster home</h2>
+    </div> 
+    <div class="voices_subcard">
+      <img class="subcard_image" src="https://cdn.olaelectric.com/sites/evdp/pages/home/homepage_ola_community_web_image_02.webp" alt="homepage_ola_community_web_image_01" title="" height="165">
+      <h2 class="subcard_head">Thirumalesh from Bengaluru <br>
+      is all in on the S1</h2>
+    </div> 
+    <div class="voices_subcard">
+      <img class="subcard_image" src="https://cdn.olaelectric.com/sites/evdp/pages/home/homepage_ola_community_web_image_03.webp" alt="homepage_ola_community_web_image_01" title="" height="165">
+      <h2 class="subcard_head">Gagan's already made the <br>
+      switch. When are you getting yours?</h2>
+    </div> 
+  </div> 
+  
+  <div class="Differnce_card">
+     <h1 class="difference_head">The difference is Ola Electric</h1>
+     <p class="difference_para">Go behind the scenes with our latest innovations, product demos, and rider stories</p>
+    <div class="difference_card">
+     <img src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/Video/section_ola_different_img_web_1.webp" class="placeholder" style="height:20%;border-radius:8px;">
+    <h2 class="Diy_head">DIY Mode</h2>
+    <p class="diy_para">Tweak your ride just the <br>way you want,with DIY Mode!</p>
+    </div>
+    <div class="difference_card">
+     <img src="./ola ss.jpg" alt="" style="height:20%;border-radius:8px;">
+    <h2 class="Find_scooty_head">Find my scooter</h2>
+    <p class="diy_para">Can't find your scooter? Your app already has Find My Scooter</p>
+    </div>
+    <div class="difference_card">
+     <img src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/Video/section_ola_different_img_web_3.webp" class="placeholder" style="height:20%;border-radius:8px;">
+    <h2 class="Live_head">Live Location Sharing</h2>
+    <p class="diy_para">Real-time peace of mind, for <br> you and your loved ones.</p>
+    </div>
+    <div class="difference_card">
+     <img src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/Video/section_ola_different_img_web_4.webp" class="placeholder" style="height:20%;border-radius:8px;">
+    <h2 class="Diy_head">Easy Park</h2>
+    <p class="diy_para">Navigate Parking effortlessly,<br> with Easy Park.</p>
+    </div>
+  </div>
+  <div class="about_container">
+     <img class="about_image" src="https://cdn.olaelectric.com/sites/evdp/pages/home/Revamp/about-us-manufacturing_web_v1.webp" alt="about-us-manufacturing_web_v1" title="">
+     <h1 class="about_head">About Us</h1>
+     <p class="about_para">At Ola Electric, we're redefining mobility with our vision of "India Inside"  <br>
+      by building a powertrain (4680 Bharat Cell & ferrite motor) and 
+      <br>technology (MoveOS) in-house. Powered by our cutting-edge MoveOS platform,<br>
+       we deliver smarter, connected, and constantly evolving experiences. With a community of nearly 1 million riders,<br> we’re driving 
+       India towards a sustainable, electric future.</p>
+      <h2 class="India">Making India the global epicentre of EV revolution</h2>
+      <a href="#" class="learn_more">Learn More</a>
+  </div>
+  <div class="subscribe">
+   <h2 class="sub_head">Subscribe to learn about our latest news</h2>
+   <hr class="hori3">
+  </div>
+  <footer class="foot_container">
+   <img class="mgz-hover-main" src="https://cdn.olaelectric.com/ev-discovery-platform/images/ola-logo-13042023.svg" alt="ola-logo-13042023" title="">
+    <div class="footer-flex-1">
+      <a href="#">Company</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Corporate</a>
+      <a href="#">Join Us</a>
+      <a href="#">Dealership</a>
+   </div>
+   <div class="footer-flex-1">
+      <a href="#">Products</a>
+      <a href="#">Ola S1 Pro+</a>
+      <a href="#">Ola S1 Pro</a>
+      <a href="">Ola S1 X+</a>
+      <a href="">Ola S1 X</a>
+      <a href="">Roadster X+</a>
+      <a href="">Roadster X</a>
+   </div>
+   <div class="footer-flex-1">
+      <a href="">Tech & Design</a>
+      <a href="">Software</a>
+      <a href="">Cell Tech</a>
+      <a href="">Manufacturing</a>
+      <a href="">Design</a>
+      <a href="">Gigafactory</a>
+      <a href="">Future Factory</a>
+   </div>
+   <div class="mobile-number">
+      <img src="https://cdn.olaelectric.com/sites/evdp/icons/call_us_icon_white_without_bg.svg" alt="">
+      <p class="mobile-number1">
+        Call: <a href="tel:08068964050" style="color: #16aa51;">080 6896 4050</a>
+      </p>
+   </div>
+
+   <div class="footer-icons">
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
